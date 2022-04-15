@@ -1,3 +1,28 @@
 # Server HTTP port
 server:
   port: 8080
+spring:
+  security:
+    user:
+      name: user
+      password: pass
+      roles:
+        - ADMIN
+
+# Actuators
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - beans
+          - metrics
+          - info
+          - health
+          - loggers
+          - readiness
+  endpoint:
+    loggers:
+      enabled: false
+    health:
+      show-details: always
